@@ -13,7 +13,7 @@ $(function () {
         loop: true,
         autoplay : 3000,
     });
-    var topswiper = new Swiper('#mustbuySwiper', {
+    var mustbuySwiper = new Swiper('#mustbuySwiper', {
         pagination: '.swiper-pagination',
         // nextButton: '.swiper-button-next',
         // prevButton: '.swiper-button-prev',
