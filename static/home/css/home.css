@@ -23,7 +23,7 @@ body {
 
 .swiper-container {
     width: 100%;
-    height: 100%;
+    height: 80%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -46,4 +46,87 @@ body {
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+}
+.nav{
+    /* 8px*/
+    margin: 0.5rem 0;
+    background: white;
+    /* 10px*/
+    padding: 0 0.625rem 0.625rem 0.625rem;
+}
+.nav ul{
+    display: flex;
+}
+.nav ul li{
+    width:25%;
+    text-align: center;
+    /* 11px*/
+    font-size: 0.6875rem;
+}
+.nav ul li img{
+    width: 100%;
+    margin-bottom: 0.625rem;
+}
+
+#mustbuySwiper{
+    width: 100%;
+}
+/* 关键是swiper的设置，slidesPerView个数*/
+#mustbuySwiper img{
+    width:100%;
+}
+
+/* 商品部分*/
+.shop{
+    background: white;
+    margin: 0.5rem 0;
+}
+.shop .shophead{
+    width: 100%;
+}
+.shop .shophead a{
+    display: inline-block;
+}
+.shop .shophead img{
+    width: 100%;
+}
+.shop .shoptab{
+    width: 100%;
+    display: flex;
+}
+.shop .shoptab a{
+    width:50%;
+}
+.shop .shoptab img {
+    width:100%;
+}
+.shop .shopclass{
+    display: flex;
+}
+.shop .shopclass li{
+    width: 25%;
+}
+.shop .shopclass li a{
+    display: inline-block;
+}
+.shop .shopclass li img{
+    width:100%;
+}
+.shop .shopcommend{
+    width: 100%;
+    display: flex;
+    /*
+        nowrap: 默认值。规定灵活的项目不拆行或不拆列
+        wrap： 规定灵活的项目在必要的时候拆行或拆列
+    */
+    flex-wrap: wrap;
+}
+.shop .shopcommend li{
+    width:50%;
+}
+.shop .shopcommend li a{
+    display: block;
+}
+.shop .shopcommend li img{
+    width: 100%;
 }

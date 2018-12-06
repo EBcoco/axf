@@ -2,12 +2,32 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
-from app.models import Wheel
+from app.models import Wheel, Nav, Mustbuy, Shop
 
 
 def home(request):
     wheels=Wheel.objects.all()
-    return render(request, 'home/home.html',context={"wheels":wheels})
+
+    navs=Nav.objects.all()
+
+    mustbuys=Mustbuy.objects.all()
+
+    shops =Shop.objects.all()
+    shophead=shops[0]
+    shoptabs=shops[1:3]
+    shopclass=shops[3:7]
+    shopcommend=shops[7:11]
+
+
+    return render(request, 'home/home.html',
+                  context={"wheels":wheels,
+                           "navs":navs,
+                           "mustbuys":mustbuys,
+                           "shophead":shophead,
+                           "shoptabs":shoptabs,
+                           "shopclass":shopclass,
+                           "shopcommend":shopcommend
+                           })
 
 
 def market(request):
