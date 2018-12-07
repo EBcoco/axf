@@ -142,6 +142,7 @@ body {
 .main .main-wrapper .title{
     /* 48px*/
     height: 3rem;
+    /*color: yellow;*/
     line-height: 3rem;
     text-align: center;
     position: relative;

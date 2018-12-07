@@ -1,8 +1,8 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
-from app.models import Wheel, Nav, Mustbuy, Shop, MainShow
+from app.models import Wheel, Nav, Mustbuy, Shop, MainShow, Foodtypes, Goods
 
 
 def home(request):
@@ -30,9 +30,18 @@ def home(request):
                            "mainShows":mainShows
                            })
 
+def market(request,categoryid):
+    foodtypes=Foodtypes.objects.all()
+    #没有时，默认为0
+    typeIndex=int(request.COOKIES.get('typeIndex',0))
+    categoryid =foodtypes[typeIndex].typeid
 
-def market(request):
-    return render(request, 'market/market.html')
+    # goodslist=Goods.objects.all()[0:10]
+    goodslist = Goods.objects.filter(categoryid=categoryid)
+    data={"foodtypes":foodtypes,
+          "goodslist":goodslist,
+          }
+    return render(request, 'market/market.html' ,context=data)
 
 
 def cart(request):
@@ -41,3 +50,7 @@ def cart(request):
 
 def mine(request):
     return render(request, 'mine/mine.html')
+
+
+def marketbase(request):
+    return redirect('axf:market', 104749)
