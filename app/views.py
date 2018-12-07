@@ -30,7 +30,7 @@ def home(request):
                            "mainShows":mainShows
                            })
 
-def market(request,categoryid):
+def market(request):
     foodtypes=Foodtypes.objects.all()
     #没有时，默认为0
     typeIndex=int(request.COOKIES.get('typeIndex',0))
